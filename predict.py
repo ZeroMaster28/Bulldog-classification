@@ -39,9 +39,11 @@ def read_and_prep_images(img_path, img_names, img_height=pm.image_size, img_widt
 # ====== Postprocessing images ======
 
 def show_results(test_images, predictions):
-    df = pd.DataFrame(columns=['Image','English','French'])
+    model_columns = ['Image'] + pm.categories
+    df = pd.DataFrame(columns=model_columns)
     for i in range(0, len(predictions)):
-        df.loc[i] = [test_images[i], predictions[i][0], predictions[i][1]]
+        result = list([test_images[i]]) + list(predictions[i])
+        df.loc[i] = result
     print(df)
 
 

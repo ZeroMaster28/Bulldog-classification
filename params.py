@@ -3,8 +3,11 @@ import os
 # project name
 project_name = 'bulldog'
 
+# list of categories names 
+categories = ['english', 'french']
+
 # number of classes
-num_classes = 2
+num_classes = len(categories)
 
 # available images per class
 images_per_class = 200
@@ -36,6 +39,9 @@ relative_path = os.path.abspath('.')
 
 # path to weights dir
 weights_path = relative_path + '\\weights'
+
+# weights file name
+weights_file = '\\resnet50_weights.h5'
 
 # path to train dir
 train_path = relative_path + '\\train'
