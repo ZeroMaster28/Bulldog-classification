@@ -11,7 +11,7 @@ from tensorflow.python.keras.preprocessing.image import load_img, img_to_array
 
 # model specification
 
-num_classes = 2
+num_classes = pm.num_classes
 resnet_weights_path = pm.weights_path + pm.weights_file
 
 model = Sequential()
